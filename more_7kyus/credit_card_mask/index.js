@@ -14,6 +14,23 @@ maskify("Skippy")                                   == "##ippy"
 maskify("Nananananananananananananananana Batman!") == "####################################man!"
 */
 
+// *** My answer ***
+// return masked string
+function maskify(cc) {
+  if (cc.length <= 1 || cc === '') {
+    return cc;
+  }
+
+  let hashed = '';
+
+  //   Add hash to the number of letters inside cc til last 4 elements
+  for (let i = 0; i < cc.length - 4; i++) {
+    hashed += '#';
+  }
+
+  return hashed + cc.slice(-4);
+}
+
 function maskify(cc) {
   if (cc.length < 5) return cc;
   return '#'.repeat(cc.length - 4) + cc.slice(-4);
