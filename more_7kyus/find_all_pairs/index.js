@@ -40,6 +40,29 @@ function duplicates(array) {
   return numOfPairs;
 }
 
+// *** Yan's answer
+// using the index of another array to keep track of the pairs
+function duplicates() {
+  // create another array 'double'
+  const double = [];
+  // create another variable pairs = 0
+  let pairs = 0;
+  // iterate over ar
+  ar.forEach(function (num) {
+    // for every number we check is number in double at the same index as the number
+    if (double[num] !== num) {
+      // if not -> we put the number at this index into double
+      double[num] = num;
+    } else {
+      // if yes -> we set the value of this index to undefined
+      double[num] = undefined;
+      // and increment pairs
+      pairs++;
+    }
+  });
+  return pairs;
+}
+
 // ***Clever
 // function duplicates(array) {
 //   let res = 0, odd = new Set();
